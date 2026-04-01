@@ -1,0 +1,2766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corner Mechanic — Complete Auto Repair | Golden, Colorado</title>
+  <meta name="description" content="Golden's trusted family auto repair shop. ASE-certified technicians delivering complete diagnostic and repair services at 703 6th St, Golden, CO. Call 303-279-1145." />
+
+  <!-- LocalBusiness Schema (JSON-LD) — boosts local SEO & rich snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Corner Mechanic",
+    "description": "Complete automotive diagnostic and repair facility in Golden, Colorado. ASE-certified, family-oriented auto shop serving the Front Range.",
+    "url": "https://www.cornermechanic.com",
+    "telephone": "+1-303-279-1145",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "703 6th St",
+      "addressLocality": "Golden",
+      "addressRegion": "CO",
+      "postalCode": "80403",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.7555,
+      "longitude": -105.2211
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:00",
+        "closes": "16:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "50",
+      "bestRating": "5"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Auto Repair Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brake Service"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC & Heating Service"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Oil & Fluid Changes"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Alignment & Suspension"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Advanced Diagnostics"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Transmission Repair"}}
+      ]
+    },
+    "sameAs": [
+      "https://share.google/VyAjVRU1YU4aVI6NT"
+    ],
+    "image": "Corner_Mech_Exterior.png",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Preload hero image for LCP -->
+  <link rel="preload" as="image" href="Corner_Mech_Exterior.webp" type="image/webp" fetchpriority="high" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       DESIGN TOKENS
+    ═══════════════════════════════════════════════════════════ */
+    :root {
+      /* Core palette — Blue & Yellow */
+      --white:        #FFFFFF;
+      --off-white:    #F7F8FA;
+      --surface:      #EEF1F7;
+      --border:       #D8DDE8;
+
+      --blue:         #1B3F7A;   /* deep navy */
+      --blue-mid:     #2453A0;   /* medium blue */
+      --blue-light:   #E6EDF8;   /* tint */
+
+      --gold:         #F5C400;   /* vivid yellow */
+      --gold-mid:     #FFD426;   /* bright yellow */
+      --gold-light:   #FFFBE6;   /* tint */
+      --gold-glow:    rgba(245,196,0,.30);
+
+      --text-900:     #0E0D0B;
+      --text-700:     #2E2D2A;
+      --text-600:     #4A4845;
+      --text-400:     #8A8780;
+
+      --shadow-sm:    0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md:    0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+      --shadow-lg:    0 16px 48px rgba(0,0,0,.10), 0 4px 12px rgba(0,0,0,.05);
+      --shadow-blue:  0 8px 32px rgba(27,63,122,.22);
+      --shadow-gold:  0 8px 28px rgba(245,196,0,.35);
+
+      --radius-sm:    6px;
+      --radius-md:    12px;
+      --radius-lg:    20px;
+      --radius-xl:    28px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text-900);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ═══════════════════════════════════════════════════════════
+       TYPOGRAPHY UTILITIES
+    ═══════════════════════════════════════════════════════════ */
+    .display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -.03em;
+    }
+    .headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.025em;
+    }
+    .label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .accent-gold { color: var(--gold); }
+    .accent-blue { color: var(--blue); }
+
+    /* ═══════════════════════════════════════════════════════════
+       SECTION WRAPPER
+    ═══════════════════════════════════════════════════════════ */
+    .section-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--gold-light);
+      border: 1px solid rgba(245,196,0,.25);
+      padding: .35rem .85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .section-eyebrow .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .8rem 1.6rem;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: transform .22s cubic-bezier(.34,1.56,.64,1),
+                  box-shadow .22s ease,
+                  background .2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #0E0D0B;   /* dark text on bright yellow */
+      box-shadow: var(--shadow-gold);
+    }
+    .btn-gold:hover {
+      background: var(--gold-mid);
+      box-shadow: 0 12px 36px rgba(245,196,0,.48);
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: var(--shadow-blue);
+    }
+    .btn-blue:hover {
+      background: var(--blue-mid);
+      box-shadow: 0 12px 36px rgba(27,63,122,.34);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.55);
+    }
+    .btn-outline-white:hover {
+      border-color: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.10);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-900);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ═══════════════════════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.90);
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s ease, box-shadow .3s ease;
+    }
+    nav.scrolled {
+      border-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    /* Logo */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      flex-shrink: 0;
+    }
+    .nav-logo-mark {
+      width: 38px; height: 38px;
+      background: var(--blue);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo-mark svg { width: 22px; height: 22px; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -.02em;
+    }
+    .nav-logo-sub {
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--text-600);
+      transition: color .2s ease;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transform: scaleX(0);
+      transition: transform .2s ease;
+    }
+    .nav-links a:hover { color: var(--text-900); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* Nav CTA */
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+    .nav-phone svg { width: 15px; height: 15px; }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--text-900);
+      border-radius: 2px;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 74px; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+      padding: 1.5rem 2rem 2rem;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .3s ease;
+    }
+    .mobile-menu.open {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-menu ul li a {
+      display: block;
+      padding: .875rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-700);
+      border-bottom: 1px solid var(--border);
+      transition: color .2s;
+    }
+    .mobile-menu ul li:last-child a { border-bottom: none; }
+    .mobile-menu ul li a:hover { color: var(--blue); }
+    .mobile-menu-cta {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .mobile-menu-cta .btn { justify-content: center; }
+
+    /* ═══════════════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 74px;
+    }
+
+    /* Background image + overlay */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Corner_Mech_Exterior.webp');
+      background-size: cover;
+      background-position: center 40%;
+      z-index: 0;
+    }
+    /* Multi-layer overlay: deep blue left fade → dark overall → subtle gold glow bottom */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(105deg,
+          rgba(14,24,50,.90) 0%,
+          rgba(14,24,50,.78) 50%,
+          rgba(14,24,50,.52) 100%
+        );
+      z-index: 1;
+    }
+    .hero-overlay-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 220px;
+      background: linear-gradient(to top, rgba(14,24,50,.60), transparent);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      width: 100%;
+    }
+
+    /* Eyebrow pill */
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(245,196,0,.18);
+      border: 1px solid rgba(245,196,0,.45);
+      padding: .4rem .9rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold-mid);
+      box-shadow: 0 0 8px var(--gold-mid);
+    }
+    .hero-eyebrow-text {
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--gold-mid);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* Headline */
+    .hero-headline {
+      font-size: clamp(3rem, 6vw, 5.75rem);
+      color: var(--white);
+      max-width: 720px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-headline .line2 { color: var(--gold-mid); }
+
+    /* Body copy */
+    .hero-body {
+      font-size: 1.1rem;
+      line-height: 1.72;
+      color: rgba(255,255,255,.75);
+      max-width: 520px;
+      margin-bottom: 2.75rem;
+      font-weight: 400;
+    }
+
+    /* CTA buttons */
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    /* Trust badges row (kept for reference) */
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 2rem;
+      gap: 0 3rem;
+      row-gap: 1.25rem;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .hero-trust-icon {
+      width: 40px; height: 40px;
+      background: rgba(245,196,0,.18);
+      border: 1px solid rgba(245,196,0,.30);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-trust-icon svg { width: 20px; height: 20px; }
+    .hero-trust-text { display: flex; flex-direction: column; }
+    .hero-trust-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-trust-label {
+      font-size: .72rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.60);
+      margin-top: .15rem;
+      letter-spacing: .04em;
+    }
+    .trust-divider {
+      width: 1px; height: 38px;
+      background: rgba(255,255,255,.15);
+      margin: 0 1.5rem;
+    }
+
+    /* Floating info card — bottom left */
+    .hero-card {
+      position: absolute;
+      bottom: 4rem;
+      left: 2rem;
+      z-index: 4;
+      background: rgba(255,255,255,.96);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      width: 230px;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-card-label {
+      font-size: .65rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    .hero-card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text-900);
+      margin-bottom: .35rem;
+    }
+    .hero-card-row {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .78rem;
+      color: var(--text-600);
+      line-height: 1.5;
+    }
+    .hero-card-row svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--gold); }
+
+    /* ═══════════════════════════════════════════════════════════
+       MARQUEE BAR
+    ═══════════════════════════════════════════════════════════ */
+    .marquee-bar {
+      background: var(--blue);
+      padding: .8rem 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 32s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: 0 2.5rem;
+      font-size: .78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.85);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .marquee-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════════════════════ */
+    #services {
+      padding: 7rem 0;
+      background: var(--off-white);
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .services-header h2 {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      margin-bottom: .75rem;
+    }
+    .services-header p {
+      font-size: 1rem;
+      color: var(--text-600);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    /* Services video */
+    .services-video-wrap {
+      margin-bottom: 3rem;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .services-video-wrap video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform .28s cubic-bezier(.22,1,.36,1),
+                  box-shadow .28s ease,
+                  border-color .2s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(245,196,0,.35);
+    }
+    .service-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .service-card:hover .service-card-img {
+      transform: scale(1.04);
+    }
+    .service-card-body {
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+    .service-card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-900);
+      margin-bottom: .45rem;
+      letter-spacing: -.02em;
+    }
+    .service-card p {
+      font-size: .875rem;
+      color: var(--text-600);
+      line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       WHY CHOOSE US
+    ═══════════════════════════════════════════════════════════ */
+    #why {
+      padding: 7rem 0;
+      background: var(--blue);
+    }
+    .why-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .why-header .section-eyebrow {
+      background: rgba(245,196,0,.18);
+      border-color: rgba(245,196,0,.35);
+    }
+    .why-header .section-eyebrow .label { color: var(--gold-mid); }
+    .why-header h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+      color: var(--white);
+      margin-bottom: .75rem;
+    }
+    .why-header p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.65);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .why-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .why-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: background .25s ease, border-color .25s ease, transform .28s cubic-bezier(.22,1,.36,1);
+    }
+    .why-card:hover {
+      background: rgba(255,255,255,.10);
+      border-color: rgba(245,196,0,.35);
+      transform: translateY(-4px);
+    }
+    .why-card-icon {
+      width: 52px; height: 52px;
+      background: rgba(245,196,0,.18);
+      border: 1px solid rgba(245,196,0,.28);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+    .why-card-icon svg { width: 26px; height: 26px; color: var(--gold-mid); }
+    .why-card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .5rem;
+    }
+    .why-card p {
+      font-size: .855rem;
+      color: rgba(255,255,255,.60);
+      line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════════════════════════ */
+    #about {
+      padding: 7rem 0;
+      background: var(--white);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-image {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+    /* Gold accent frame */
+    .about-image-frame {
+      position: absolute;
+      top: -18px; left: -18px;
+      right: 18px; bottom: 18px;
+      border: 2px solid var(--gold);
+      border-radius: var(--radius-xl);
+      z-index: -1;
+      opacity: .45;
+    }
+    /* Floating stat badge */
+    .about-badge {
+      position: absolute;
+      bottom: 2rem;
+      right: -2rem;
+      background: var(--blue);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-blue);
+      z-index: 2;
+    }
+    .about-badge-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold-mid);
+      line-height: 1;
+    }
+    .about-badge-text {
+      font-size: .72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.75);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-top: .3rem;
+    }
+
+    /* About copy */
+    .about-content .section-eyebrow { margin-bottom: 1.25rem; }
+    .about-content h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      margin-bottom: 1.25rem;
+    }
+    .about-content p {
+      font-size: .97rem;
+      color: var(--text-600);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .about-content p:last-of-type { margin-bottom: 2rem; }
+
+    /* Stats row */
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .about-stat { text-align: center; }
+    .about-stat-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+    }
+    .about-stat-label {
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--text-400);
+      margin-top: .25rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════════════════════ */
+    #testimonials {
+      padding: 7rem 0;
+      background: var(--off-white);
+    }
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .testimonials-header h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+      margin-bottom: .75rem;
+    }
+    .testimonials-header p {
+      font-size: 1rem;
+      color: var(--text-600);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transition: transform .28s cubic-bezier(.22,1,.36,1), box-shadow .28s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: .25rem;
+    }
+    .testimonial-stars svg {
+      width: 16px; height: 16px;
+      color: var(--gold);
+      fill: var(--gold);
+    }
+    .testimonial-quote {
+      font-size: .95rem;
+      line-height: 1.72;
+      color: var(--text-700);
+      font-style: italic;
+      flex: 1;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .testimonial-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--text-900);
+    }
+    .testimonial-meta {
+      font-size: .78rem;
+      color: var(--text-400);
+      margin-top: .1rem;
+    }
+
+    /* Google badge */
+    .testimonials-google {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: .65rem 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .google-badge svg { width: 20px; height: 20px; }
+    .google-badge-text {
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--text-700);
+    }
+    .google-badge-stars {
+      display: flex;
+      gap: 2px;
+    }
+    .google-badge-stars svg {
+      width: 14px; height: 14px;
+      color: var(--gold);
+      fill: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       CONTACT / BOOKING CTA
+    ═══════════════════════════════════════════════════════════ */
+    #contact {
+      padding: 7rem 0;
+      background: var(--white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info .section-eyebrow { margin-bottom: 1.25rem; }
+    .contact-info h2 {
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+    .contact-info p {
+      font-size: .97rem;
+      color: var(--text-600);
+      line-height: 1.72;
+      margin-bottom: 2.5rem;
+    }
+    .contact-phone-display {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .phone-icon-wrap {
+      width: 56px; height: 56px;
+      background: var(--blue);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .phone-icon-wrap svg { width: 26px; height: 26px; color: var(--white); }
+    .phone-display-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -.03em;
+      line-height: 1;
+    }
+    .phone-display-label {
+      font-size: .75rem;
+      font-weight: 500;
+      color: var(--text-400);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-top: .2rem;
+    }
+
+    /* Info items */
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .contact-detail-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .contact-detail-item-icon {
+      width: 38px; height: 38px;
+      background: var(--gold-light);
+      border: 1px solid rgba(245,196,0,.2);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+    .contact-detail-item-icon svg { width: 18px; height: 18px; color: var(--gold); }
+    .contact-detail-item-body { flex: 1; }
+    .contact-detail-item-label {
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--text-400);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .25rem;
+    }
+    .contact-detail-item-val {
+      font-size: .92rem;
+      color: var(--text-700);
+      line-height: 1.55;
+    }
+
+    /* Form */
+    .contact-form-wrap {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem;
+    }
+    .form-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-900);
+      margin-bottom: .4rem;
+    }
+    .form-subtitle {
+      font-size: .875rem;
+      color: var(--text-600);
+      margin-bottom: 2rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      margin-bottom: 1.1rem;
+    }
+    .form-group label {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text-700);
+      letter-spacing: .04em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      color: var(--text-900);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .75rem 1rem;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px var(--blue-light);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      width: 100%;
+      justify-content: center;
+      padding: .95rem 2rem;
+      font-size: .95rem;
+      margin-top: .5rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════════════ */
+    footer {
+      background: #0C1828;
+      color: rgba(255,255,255,.70);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand .nav-logo-mark {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      margin-bottom: .75rem;
+    }
+    .footer-brand .nav-logo-title { color: var(--white); font-size: 1.15rem; }
+    .footer-brand .nav-logo-sub { color: var(--gold); }
+    .footer-brand-desc {
+      font-size: .875rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 240px;
+    }
+    .footer-col-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+    }
+    .footer-col ul li a {
+      font-size: .875rem;
+      color: rgba(255,255,255,.60);
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold-mid); }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      font-size: .875rem;
+      color: rgba(255,255,255,.65);
+      margin-bottom: .75rem;
+      line-height: 1.55;
+    }
+    .footer-contact-item svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--gold); margin-top: .15rem; }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin: 0 0 1.75rem;
+    }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: .8rem;
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer-bottom-links a {
+      color: rgba(255,255,255,.40);
+      transition: color .2s;
+    }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,.80); }
+
+    /* ═══════════════════════════════════════════════════════════
+       SCROLL-REVEAL ANIMATION
+    ═══════════════════════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card-img { height: 180px; }
+      .why-strip { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-image { height: 380px; }
+      .about-badge { right: 1rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .hero-card { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: block; }
+      .nav-logo-img { width: 140px; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .why-strip { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+
+      .hero-headline { font-size: clamp(2.2rem, 8vw, 3rem); }
+      .hero-body { font-size: 1rem; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .contact-form-wrap { padding: 1.5rem; }
+
+      /* Carousel cards narrower on mobile */
+      .review-card { width: 82vw; padding: 1.25rem; }
+      .reviews-carousel { margin: 0 -1.25rem; }
+      .reviews-carousel::before,
+      .reviews-carousel::after { width: 40px; }
+
+      /* Tighten section padding */
+      section { padding: 4rem 0 !important; }
+      #testimonials { padding: 4rem 0 !important; }
+      #faq { padding: 4rem 0 !important; }
+      #contact { padding: 4rem 0 !important; }
+      .services-video-wrap { margin-bottom: 2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .section-wrap { padding: 0 1.25rem; }
+      .nav-inner { padding: 0 1.25rem; }
+      .hero-content { padding: 3rem 1.25rem 4rem; }
+      .trust-divider { display: none; }
+      .about-stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .why-card { padding: 1.5rem; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       GRAIN TEXTURE OVERLAY
+    ═══════════════════════════════════════════════════════════ */
+    .grain-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: .045;
+      mix-blend-mode: multiply;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PARALLAX HERO
+    ═══════════════════════════════════════════════════════════ */
+    .hero-bg { transition: none; }
+
+    /* ═══════════════════════════════════════════════════════════
+       FAQ ACCORDION
+    ═══════════════════════════════════════════════════════════ */
+    #faq {
+      padding: 7rem 0;
+      background: var(--white);
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .faq-header h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+      margin-bottom: .75rem;
+    }
+    .faq-header p {
+      font-size: 1rem;
+      color: var(--text-600);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      width: 100%;
+      padding: 1.5rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-900);
+      text-align: left;
+      line-height: 1.4;
+      transition: color .2s;
+    }
+    .faq-question:hover { color: var(--blue); }
+    .faq-chevron {
+      width: 22px; height: 22px;
+      flex-shrink: 0;
+      transition: transform .3s cubic-bezier(.22,1,.36,1);
+      color: var(--text-400);
+    }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--gold);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s cubic-bezier(.22,1,.36,1), padding .35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer-inner {
+      padding: 0 0 1.5rem;
+      font-size: .93rem;
+      color: var(--text-600);
+      line-height: 1.72;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       GOOGLE MAP
+    ═══════════════════════════════════════════════════════════ */
+    .map-section {
+      width: 100%;
+      background: var(--off-white);
+      padding: 0;
+    }
+    .map-wrap {
+      width: 100%;
+      height: 400px;
+      border-top: 3px solid var(--gold);
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      filter: saturate(.85) contrast(1.05);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       STICKY MOBILE BOTTOM BAR
+    ═══════════════════════════════════════════════════════════ */
+    .mobile-bottom-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 998;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 20px rgba(0,0,0,.10);
+      padding: .75rem 1rem;
+      gap: .75rem;
+    }
+    .mobile-bottom-bar .btn {
+      flex: 1;
+      justify-content: center;
+      padding: .85rem 1rem;
+      font-size: .9rem;
+      border-radius: var(--radius-sm);
+    }
+    @media (max-width: 768px) {
+      .mobile-bottom-bar { display: flex; }
+      /* Add padding to body so footer isn't hidden behind the bar */
+      body { padding-bottom: 72px; }
+    }
+    /* ═══════════════════════════════════════════════════════════
+       NAV LOGO IMAGE
+    ═══════════════════════════════════════════════════════════ */
+    .nav-logo-img {
+      height: auto;
+      width: 260px;
+      display: block;
+      object-fit: contain;
+    }
+    .footer-logo-img {
+      height: auto;
+      width: 240px;
+      display: block;
+      object-fit: contain;
+      margin-bottom: .75rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       REVIEWS CAROUSEL
+    ═══════════════════════════════════════════════════════════ */
+    .reviews-carousel {
+      overflow: hidden;
+      position: relative;
+      margin: 0 -2rem;
+      padding: .5rem 0 1rem;
+    }
+    .reviews-carousel::before,
+    .reviews-carousel::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 60px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .reviews-carousel::before {
+      left: 0;
+      background: linear-gradient(to right, var(--off-white) 0%, transparent);
+    }
+    .reviews-carousel::after {
+      right: 0;
+      background: linear-gradient(to left, var(--off-white) 0%, transparent);
+    }
+    .reviews-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: reviewScroll 48s linear infinite;
+      width: max-content;
+      padding: .5rem 1rem;
+    }
+    .reviews-track:hover { animation-play-state: paused; }
+    @keyframes reviewScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .review-card {
+      width: 360px;
+      flex-shrink: 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: box-shadow .25s ease;
+    }
+    .review-card:hover { box-shadow: var(--shadow-md); }
+    .review-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .review-stars { display: flex; gap: .2rem; }
+    .review-stars svg { width: 15px; height: 15px; fill: var(--gold); color: var(--gold); }
+    .review-google-g { width: 18px; height: 18px; flex-shrink: 0; }
+    .review-quote {
+      font-size: .925rem;
+      line-height: 1.72;
+      color: var(--text-700);
+      font-style: italic;
+      flex: 1;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .review-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .review-name { font-weight: 600; font-size: .88rem; color: var(--text-900); }
+    .review-source { font-size: .73rem; color: var(--text-400); margin-top: .1rem; }
+
+    /* ═══════════════════════════════════════════════════════════
+       HERO FORM (glass card)
+    ═══════════════════════════════════════════════════════════ */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-form-card {
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .hero-form-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .35rem;
+    }
+    .hero-form-sub {
+      font-size: .8rem;
+      color: rgba(255,255,255,.65);
+      margin-bottom: 1.25rem;
+    }
+    .hero-form-card .form-group {
+      margin-bottom: .75rem;
+    }
+    .hero-form-card label {
+      font-size: .72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.75);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: .3rem;
+      display: block;
+    }
+    .hero-form-card input,
+    .hero-form-card select,
+    .hero-form-card textarea {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.20);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      padding: .55rem .75rem;
+      font-size: .85rem;
+      width: 100%;
+      outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .hero-form-card input::placeholder,
+    .hero-form-card textarea::placeholder { color: rgba(255,255,255,.40); }
+    .hero-form-card select option { background: var(--blue); color: var(--white); }
+    .hero-form-card input:focus,
+    .hero-form-card select:focus,
+    .hero-form-card textarea:focus {
+      border-color: var(--gold-mid);
+      background: rgba(255,255,255,.16);
+    }
+    .hero-form-card .form-row-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+    }
+    .hero-form-card .btn-gold {
+      width: 100%;
+      justify-content: center;
+      margin-top: .5rem;
+      font-size: .9rem;
+      padding: .75rem 1rem;
+    }
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-form-card { max-width: 500px; }
+    }
+    @media (max-width: 768px) {
+      .hero-form-card { display: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════════════════════ -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#" class="nav-logo" aria-label="Corner Mechanic Home">
+        <picture>
+          <source srcset="images/Corner_Mechanic_logo.webp" type="image/webp" />
+          <img src="images/Corner_Mechanic_logo.png" alt="Corner Mechanic" class="nav-logo-img" width="1536" height="1024" decoding="async" fetchpriority="high" />
+        </picture>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="nav-cta">
+        <a href="tel:3032791145" class="btn btn-outline" aria-label="Call Corner Mechanic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.01a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/>
+          </svg>
+          Call Now
+        </a>
+        <a href="#contact" class="btn btn-gold">Book Appointment</a>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#why" class="mobile-link">Why Us</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#testimonials" class="mobile-link">Reviews</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-cta">
+      <a href="#contact" class="btn btn-gold mobile-link">Book Appointment</a>
+      <a href="tel:3032791145" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.01a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/>
+        </svg>
+        303-279-1145
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="home" aria-label="Hero">
+    <!-- Background layers -->
+    <div class="hero-bg" role="img" aria-label="Professional auto repair bay"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-overlay-bottom" aria-hidden="true"></div>
+
+    <!-- Main content -->
+    <div class="hero-content">
+      <div class="hero-inner">
+
+        <!-- Left: copy + CTAs -->
+        <div class="hero-left">
+          <h1 class="display hero-headline">
+            Golden's Trusted<br>
+            <span class="line2">Family Auto Shop</span>
+          </h1>
+          <p class="hero-body">
+            Complete automotive diagnostic and repair — handled with care, transparency, and the craftsmanship your family's vehicle deserves. Serving Golden and the Front Range since day one.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-gold">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Book an Appointment
+            </a>
+            <a href="tel:3032791145" class="btn btn-outline-white">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.01a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/>
+              </svg>
+              Call Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: quick booking form (desktop only) -->
+        <div class="hero-form-card" role="form" aria-label="Quick appointment request">
+          <div class="hero-form-title">Request an Appointment</div>
+          <div class="hero-form-sub">Quick form — we'll call to confirm.</div>
+          <form id="heroForm" novalidate>
+            <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+              <div class="form-group">
+                <label for="hfname">First Name</label>
+                <input type="text" id="hfname" name="fname" placeholder="Jane" />
+              </div>
+              <div class="form-group">
+                <label for="hlname">Last Name</label>
+                <input type="text" id="hlname" name="lname" placeholder="Smith" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="hphone">Phone *</label>
+              <input type="tel" id="hphone" name="phone" placeholder="303-555-1234" required />
+            </div>
+            <div class="form-group">
+              <label for="hservice">Service Needed</label>
+              <select id="hservice" name="service">
+                <option value="" disabled selected>Select a service…</option>
+                <option>Vehicle Diagnostics &amp; Repair</option>
+                <option>Brake Repair &amp; Service</option>
+                <option>Oil &amp; Fluid Changes</option>
+                <option>Suspension &amp; Steering</option>
+                <option>Wheel Alignments</option>
+                <option>Transmission Repair</option>
+                <option>AC Service &amp; Repair</option>
+                <option>Hybrid &amp; EV Repair</option>
+                <option>Pre-Purchase Inspection</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-row-3">
+              <div class="form-group">
+                <label for="hyear">Year</label>
+                <input type="text" id="hyear" name="year" placeholder="2019" maxlength="4" />
+              </div>
+              <div class="form-group">
+                <label for="hmake">Make</label>
+                <input type="text" id="hmake" name="make" placeholder="Toyota" />
+              </div>
+              <div class="form-group">
+                <label for="hmodel">Model</label>
+                <input type="text" id="hmodel" name="model" placeholder="Camry" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-gold">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Send Request
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Floating info card -->
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MARQUEE
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- Duplicated for seamless loop -->
+      <span class="marquee-item"><span class="marquee-dot"></span>Brake Repair &amp; Service</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Oil &amp; Fluid Changes</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Engine Diagnostics</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Wheel Alignments</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Suspension &amp; Steering</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Transmission Repair</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>AC Service &amp; Repair</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Hybrid &amp; EV Service</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Pre-Purchase Inspections</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Fleet Repair &amp; Service</span>
+      <!-- Duplicate set -->
+      <span class="marquee-item"><span class="marquee-dot"></span>Brake Repair &amp; Service</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Oil &amp; Fluid Changes</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Engine Diagnostics</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Wheel Alignments</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Suspension &amp; Steering</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Transmission Repair</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>AC Service &amp; Repair</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Hybrid &amp; EV Service</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Pre-Purchase Inspections</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Fleet Repair &amp; Service</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="services" aria-label="Our Services">
+    <div class="section-wrap">
+
+      <div class="services-header reveal">
+        <h2 class="headline">Complete Auto Repair <span class="accent-blue">Services</span></h2>
+        <p>From routine maintenance to complex diagnostics — we handle it all with ASE-certified skill, honest communication, and genuine care for every vehicle we touch.</p>
+      </div>
+
+      <!-- Exploding-view video -->
+      <div class="services-video-wrap reveal">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="images/4Runner_exploding_View.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Brake Service -->
+        <div class="service-card reveal">
+          <div style="overflow:hidden;">
+            <picture>
+              <source srcset="images/Brake_Service.webp" type="image/webp" />
+              <img class="service-card-img" src="images/Brake_Service.png" alt="Brake repair service" loading="lazy" decoding="async" width="1536" height="1024" />
+            </picture>
+          </div>
+          <div class="service-card-body">
+            <h3>Brake Service</h3>
+            <p>Squealing, grinding, or a soft pedal? We inspect and repair pads, rotors, calipers, and brake fluid — restoring the stopping confidence your family needs.</p>
+          </div>
+        </div>
+
+        <!-- AC & Heating -->
+        <div class="service-card reveal">
+          <div style="overflow:hidden;">
+            <picture>
+              <source srcset="images/AC_Heating.webp" type="image/webp" />
+              <img class="service-card-img" src="images/AC_Heating.png" alt="AC and heating service" loading="lazy" decoding="async" width="1536" height="1024" />
+            </picture>
+          </div>
+          <div class="service-card-body">
+            <h3>AC &amp; Heating Service</h3>
+            <p>Colorado's climate demands year-round cabin comfort. We diagnose and repair compressors, heater cores, blower motors, and refrigerant systems to keep you comfortable.</p>
+          </div>
+        </div>
+
+        <!-- Oil & Fluid Changes -->
+        <div class="service-card reveal">
+          <div style="overflow:hidden;">
+            <picture>
+              <source srcset="images/Oil_AutoTrek.webp" type="image/webp" />
+              <img class="service-card-img" src="images/Oil_AutoTrek.png" alt="Oil and fluid change service" loading="lazy" decoding="async" width="1536" height="1024" />
+            </picture>
+          </div>
+          <div class="service-card-body">
+            <h3>Oil &amp; Fluid Changes</h3>
+            <p>Engine, transmission, coolant, brake fluid — interval-right service keeps your drivetrain protected mile after mile in Colorado's demanding conditions.</p>
+          </div>
+        </div>
+
+        <!-- Alignment & Suspension -->
+        <div class="service-card reveal">
+          <div style="overflow:hidden;">
+            <picture>
+              <source srcset="images/Alignment.webp" type="image/webp" />
+              <img class="service-card-img" src="images/Alignment.png" alt="Alignment and suspension work" loading="lazy" decoding="async" width="1536" height="1024" />
+            </picture>
+          </div>
+          <div class="service-card-body">
+            <h3>Alignment &amp; Suspension</h3>
+            <p>Pulling, clunks, or uneven tire wear? We diagnose shocks, struts, and steering components — then align to spec for a smooth, confident ride.</p>
+          </div>
+        </div>
+
+        <!-- Advanced Diagnostics -->
+        <div class="service-card reveal">
+          <div style="overflow:hidden;">
+            <picture>
+              <source srcset="images/DIAG.webp" type="image/webp" />
+              <img class="service-card-img" src="images/DIAG.png" alt="Advanced vehicle diagnostics" loading="lazy" decoding="async" width="1536" height="1024" />
+            </picture>
+          </div>
+          <div class="service-card-body">
+            <h3>Advanced Diagnostics</h3>
+            <p>Warning light on? We pinpoint faults to root cause with modern scan tools and explain your options in plain language — no surprises, just clear repair plans.</p>
+          </div>
+        </div>
+
+        <!-- Transmission Repair -->
+        <div class="service-card reveal">
+          <div style="overflow:hidden;">
+            <picture>
+              <source srcset="images/Transmission.webp" type="image/webp" />
+              <img class="service-card-img" src="images/Transmission.png" alt="Transmission repair service" loading="lazy" decoding="async" width="1024" height="1536" />
+            </picture>
+          </div>
+          <div class="service-card-body">
+            <h3>Transmission Repair</h3>
+            <p>Slipping gears, hard shifts, or warning lights — we diagnose transmission issues accurately before recommending any repair, saving you time and money.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="reveal" style="text-align:center; margin-top:2.5rem;">
+        <a href="#contact" class="btn btn-blue">Schedule Any Service</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       WHY CHOOSE US
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="why" aria-label="Why Choose Corner Mechanic">
+    <div class="section-wrap">
+
+      <div class="why-header reveal">
+        <h2 class="headline">The Standard Your Car Deserves</h2>
+        <p>We built this shop on the belief that every family deserves a mechanic they can trust — one who explains things clearly, does the work right, and stands behind it.</p>
+      </div>
+
+      <div class="why-strip">
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>ASE Certified Expertise</h3>
+          <p>Our technicians hold current ASE certifications — meaning your vehicle receives service that meets nationally recognized standards of skill and professionalism.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3>Family-Oriented Care</h3>
+          <p>We treat every customer like a neighbor — because in Golden, many of them are. Honest assessments, fair pricing, and no pressure recommendations, every visit.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+            </svg>
+          </div>
+          <h3>Transparent Pricing</h3>
+          <p>You get a clear estimate before any work begins. No surprise charges, no upsell pressure — just an honest breakdown of what your vehicle needs and what it costs.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Complete Diagnostics First</h3>
+          <p>We diagnose to root cause — not surface symptoms. Modern scan tools paired with experienced eyes means accurate repairs that actually fix the problem the first time.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="about" aria-label="About Corner Mechanic">
+    <div class="section-wrap">
+      <div class="about-grid">
+
+        <!-- Image column -->
+        <div class="about-image-wrap reveal">
+          <img
+            class="about-image"
+            src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=80&auto=format&fit=crop&crop=center"
+            alt="Corner Mechanic technician working on a vehicle in the shop"
+            loading="lazy"
+          />
+          <div class="about-image-frame" aria-hidden="true"></div>
+          <div class="about-badge" aria-label="Located in Golden, Colorado">
+            <div class="about-badge-num">Golden</div>
+            <div class="about-badge-text">Colorado</div>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="about-content reveal">
+          <h2 class="headline">Your Corner Mechanic — <span class="accent-gold">Right Here in Golden</span></h2>
+
+          <p>
+            Corner Mechanic was built on a simple idea: Golden families deserve a repair shop that combines expert automotive knowledge with the warmth of a hometown business. From the first handshake to the final key handoff, we make sure you feel informed, respected, and confident in every decision.
+          </p>
+          <p>
+            Our ASE-certified technicians tackle everything from routine oil changes and brake service to complex engine diagnostics and hybrid repair — all under one roof at 703 6th St. Whether you're a lifelong Golden resident or new to the area, we're the shop you'll refer to your friends.
+          </p>
+
+          <a href="#contact" class="btn btn-blue">
+            Meet the Team &rarr;
+          </a>
+
+          <!-- Stats row -->
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="about-stat-num">30+</div>
+              <div class="about-stat-label">Years in Business</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-num">10K+</div>
+              <div class="about-stat-label">Cars Serviced</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-num">5.0★</div>
+              <div class="about-stat-label">Google Rating</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-num">ASE</div>
+              <div class="about-stat-label">Certified Shop</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="testimonials" aria-label="Customer Reviews">
+    <div class="section-wrap">
+
+      <div class="testimonials-header reveal">
+        <h2 class="headline">Trusted by Golden Families</h2>
+        <p>Don't take our word for it — here's what our customers have to say about their experience at Corner Mechanic.</p>
+      </div>
+
+      <!-- Auto-scrolling reviews carousel — real Google reviews -->
+      <div class="reviews-carousel">
+        <div class="reviews-track">
+
+          <!-- ── Set 1 ── -->
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="review-stars" aria-label="5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <svg class="review-google-g" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-quote">"I was from out of town, and my car was making a horrible noise, and Alex and Sharla, despite being very busy, took the time to help. Alex figured out the problem and had it fixed within the hour so I could drive home safely across state. Very honest, helpful, and went out of their way to do it. I highly recommend Corner Mechanic!"</p>
+            <div class="review-author">
+              <div class="review-avatar">JJ</div>
+              <div>
+                <div class="review-name">Janet Johnson</div>
+                <div class="review-source">Google Review · 5★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="review-stars" aria-label="5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <svg class="review-google-g" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-quote">"Alex (and his sweet partner and baby) at Corner Mechanic are the absolute best!! We've been taking our cars here for years and I totally trust them. He is a genuinely good guy and has really helped us out when we were in an urgent repair situation. Couldn't recommend more highly!"</p>
+            <div class="review-author">
+              <div class="review-avatar">AW</div>
+              <div>
+                <div class="review-name">Annie Wetherington</div>
+                <div class="review-source">Google Review · 5★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="review-stars" aria-label="5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <svg class="review-google-g" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-quote">"I brought my car to Corner Mechanic after multiple dealerships failed to diagnose several issues over the past many years. This was my last hope before selling the car. From the first phone call, they were friendly and professional. They notified me immediately when they made progress — and got it fixed. Couldn't be happier."</p>
+            <div class="review-author">
+              <div class="review-avatar">AW</div>
+              <div>
+                <div class="review-name">adam wiggins</div>
+                <div class="review-source">Google Review · 5★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Set 2 (duplicate for seamless loop) ── -->
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="review-stars" aria-label="5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <svg class="review-google-g" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-quote">"I was from out of town, and my car was making a horrible noise, and Alex and Sharla, despite being very busy, took the time to help. Alex figured out the problem and had it fixed within the hour so I could drive home safely across state. Very honest, helpful, and went out of their way to do it. I highly recommend Corner Mechanic!"</p>
+            <div class="review-author">
+              <div class="review-avatar">JJ</div>
+              <div>
+                <div class="review-name">Janet Johnson</div>
+                <div class="review-source">Google Review · 5★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="review-stars" aria-label="5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <svg class="review-google-g" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-quote">"Alex (and his sweet partner and baby) at Corner Mechanic are the absolute best!! We've been taking our cars here for years and I totally trust them. He is a genuinely good guy and has really helped us out when we were in an urgent repair situation. Couldn't recommend more highly!"</p>
+            <div class="review-author">
+              <div class="review-avatar">AW</div>
+              <div>
+                <div class="review-name">Annie Wetherington</div>
+                <div class="review-source">Google Review · 5★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="review-stars" aria-label="5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <svg class="review-google-g" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-quote">"I brought my car to Corner Mechanic after multiple dealerships failed to diagnose several issues over the past many years. This was my last hope before selling the car. From the first phone call, they were friendly and professional. They notified me immediately when they made progress — and got it fixed. Couldn't be happier."</p>
+            <div class="review-author">
+              <div class="review-avatar">AW</div>
+              <div>
+                <div class="review-name">adam wiggins</div>
+                <div class="review-source">Google Review · 5★</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Google badge -->
+      <div class="testimonials-google reveal">
+        <a href="https://share.google/VyAjVRU1YU4aVI6NT" target="_blank" rel="noopener noreferrer" class="google-badge" aria-label="See all Google reviews">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <span class="google-badge-text">4.7 · 156 reviews on Google</span>
+          <div class="google-badge-stars" aria-label="5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="faq" aria-label="Frequently Asked Questions">
+    <div class="section-wrap">
+
+      <div class="faq-header reveal">
+        <h2 class="headline">Frequently Asked <span class="accent-gold">Questions</span></h2>
+        <p>Answers to the questions we hear most — so you can feel confident before you even call.</p>
+      </div>
+
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do I need an appointment, or do you take walk-ins?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">We recommend scheduling an appointment so we can dedicate the right amount of time to your vehicle, but we do accommodate walk-ins whenever possible based on our current workload. Give us a call at 303-279-1145 and we'll find a time that works.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How long does a typical repair or service take?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">It depends on the service. Oil changes and inspections are usually same-day. Brake jobs and diagnostics are typically completed within a day. Larger repairs like transmission work may take 2-3 days. We'll always give you a clear timeline before we start.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Will you give me an estimate before starting any work?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">Absolutely. We never begin repairs without your approval. After diagnosing your vehicle, we'll walk you through exactly what's needed, what it costs, and what can wait — so you can make an informed decision with zero pressure.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What makes Corner Mechanic different from dealership service?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">You get dealer-level expertise from ASE-certified technicians at a fraction of the cost — without the upsell pressure. We're a family-owned shop that takes the time to explain everything clearly and treat your car like it's our own. Plus, using an independent shop doesn't void your manufacturer warranty.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you offer any kind of warranty on repairs?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">Yes. We stand behind our work. Parts and labor carry warranties that we'll explain clearly before any repair begins. If something doesn't feel right after a repair, bring it back and we'll make it right.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What types of vehicles do you service?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" aria-hidden="true">
+            <div class="faq-answer-inner">We service most domestic, Asian, and European makes and models — cars, trucks, SUVs, and hybrids. If you're unsure whether we work on your specific vehicle, just give us a call and we'll let you know right away.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTACT / BOOKING
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="contact" aria-label="Contact and Booking">
+    <div class="section-wrap">
+      <div class="contact-grid">
+
+        <!-- Info column -->
+        <div class="contact-info reveal">
+          <h2 class="headline">Ready to <span class="accent-gold">Book Your Visit?</span></h2>
+          <p>Give us a call or fill out the form and we'll be in touch to confirm your appointment. Walk-ins welcome based on availability.</p>
+
+          <!-- Big phone number -->
+          <a href="tel:3032791145" class="contact-phone-display" aria-label="Call 303-279-1145">
+            <div class="phone-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.01a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="phone-display-num">303-279-1145</div>
+              <div class="phone-display-label">Call us directly</div>
+            </div>
+          </a>
+
+          <!-- Detail items -->
+          <div class="contact-details">
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-detail-item-body">
+                <div class="contact-detail-item-label">Address</div>
+                <div class="contact-detail-item-val">
+                  703 6th St<br>Golden, CO 80403
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="contact-detail-item-body">
+                <div class="contact-detail-item-label">Hours</div>
+                <div class="contact-detail-item-val">
+                  Mon – Thu: 8:00 am – 5:00 pm<br>
+                  Friday: 8:00 am – 4:00 pm<br>
+                  Sat – Sun: Closed
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-detail-item-body">
+                <div class="contact-detail-item-label">Phone</div>
+                <div class="contact-detail-item-val">
+                  <a href="tel:3032791145" style="color:var(--blue); font-weight:600;">303-279-1145</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Form column -->
+        <div class="contact-form-wrap reveal">
+          <div class="form-title">Book an Appointment</div>
+          <div class="form-subtitle">Fill out the form below and we'll confirm your slot.</div>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="fname" placeholder="Jane" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" placeholder="303-555-1234" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jane@email.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Needed *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service…</option>
+                <option>Vehicle Diagnostics &amp; Repair</option>
+                <option>Brake Repair &amp; Service</option>
+                <option>Oil &amp; Fluid Changes</option>
+                <option>Suspension &amp; Steering</option>
+                <option>Wheel Alignments</option>
+                <option>Transmission Repair</option>
+                <option>AC Service &amp; Repair</option>
+                <option>Hybrid &amp; EV Repair</option>
+                <option>Pre-Purchase Inspection</option>
+                <option>Fleet Service</option>
+                <option>Preventative Maintenance</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vyear">Year</label>
+                <input type="text" id="vyear" name="year" placeholder="2019" maxlength="4" />
+              </div>
+              <div class="form-group">
+                <label for="vmake">Make</label>
+                <input type="text" id="vmake" name="make" placeholder="Toyota" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="vmodel">Model</label>
+              <input type="text" id="vmodel" name="model" placeholder="4Runner" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Additional Details</label>
+              <textarea id="message" name="message" placeholder="Describe symptoms or any other details…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold form-submit">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Send Request
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       GOOGLE MAP
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="map-section" aria-label="Shop location map">
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.9!2d-105.2233!3d39.7555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b9b3e3e0e1b3f%3A0x0!2s703+6th+St%2C+Golden%2C+CO+80403!5e0!3m2!1sen!2sus!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Corner Mechanic location — 703 6th St, Golden CO 80403"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STICKY MOBILE BOTTOM BAR
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="mobile-bottom-bar" aria-label="Quick actions">
+    <a href="tel:3032791145" class="btn btn-blue">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.01a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/>
+      </svg>
+      Call Now
+    </a>
+    <a href="#contact" class="btn btn-gold">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      Book Appointment
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="section-wrap">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <picture>
+            <source srcset="images/Corner_Mechanic_logo.webp" type="image/webp" />
+            <img src="images/Corner_Mechanic_logo.png" alt="Corner Mechanic" class="footer-logo-img" width="1536" height="1024" decoding="async" loading="lazy" />
+          </picture>
+          <p class="footer-brand-desc">
+            Complete automotive diagnostic and repair — family oriented, ASE certified, and proud to serve Golden and the Front Range.
+          </p>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <ul>
+            <li><a href="#services">Diagnostics &amp; Repair</a></li>
+            <li><a href="#services">Brake Service</a></li>
+            <li><a href="#services">Oil &amp; Fluids</a></li>
+            <li><a href="#services">Suspension &amp; Steering</a></li>
+            <li><a href="#services">Wheel Alignments</a></li>
+            <li><a href="#services">AC Service</a></li>
+            <li><a href="#services">Hybrid &amp; EV</a></li>
+            <li><a href="#services">Fleet Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick links -->
+        <div class="footer-col">
+          <div class="footer-col-title">Quick Links</div>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://share.google/VyAjVRU1YU4aVI6NT" target="_blank" rel="noopener noreferrer">Google Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col">
+          <div class="footer-col-title">Contact Us</div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.01a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+            <a href="tel:3032791145" style="color:rgba(255,255,255,.65);">303-279-1145</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            703 6th St, Golden, CO 80403
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Mon–Thu 8am–5pm · Fri 8am–4pm
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 Corner Mechanic. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════════════════════ -->
+  <script>
+    'use strict';
+
+
+    /* ── Navbar scroll effect ─────────────────────────────── */
+    const nav = document.getElementById('mainNav');
+    const onScroll = () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* ── Hamburger / mobile menu ──────────────────────────── */
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu   = document.getElementById('mobileMenu');
+
+    const toggleMenu = (open) => {
+      hamburgerBtn.classList.toggle('open', open);
+      hamburgerBtn.setAttribute('aria-expanded', String(open));
+      mobileMenu.classList.toggle('open', open);
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+
+    hamburgerBtn.addEventListener('click', () => {
+      toggleMenu(!hamburgerBtn.classList.contains('open'));
+    });
+
+    // Close menu when any mobile link is clicked
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (
+        mobileMenu.classList.contains('open') &&
+        !mobileMenu.contains(e.target) &&
+        !hamburgerBtn.contains(e.target)
+      ) {
+        toggleMenu(false);
+      }
+    });
+
+    /* ── Scroll-reveal (IntersectionObserver) ─────────────── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+
+    /* ── Staggered reveal for grids ──────────────────────── */
+    const staggerSelectors = [
+      '.services-grid .service-card',
+      '.why-strip .why-card',
+      '.testimonials-grid .testimonial-card',
+      '.about-stats .about-stat',
+    ];
+    staggerSelectors.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((el, i) => {
+        el.style.transitionDelay = `${i * 80}ms`;
+      });
+    });
+
+    /* ── Animated stat counters ───────────────────────────── */
+    const animateCounter = (el, target, suffix) => {
+      const isAlpha = isNaN(parseInt(target));
+      if (isAlpha) return; // skip non-numeric like "ASE"
+      const num = parseInt(target);
+      const duration = 1800;
+      const step = 16;
+      const increment = num / (duration / step);
+      let current = 0;
+      const update = () => {
+        current = Math.min(current + increment, num);
+        el.textContent = Math.floor(current).toLocaleString() + suffix;
+        if (current < num) requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    };
+
+    const statObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const raw = el.dataset.target;
+          const suffix = el.dataset.suffix || '';
+          animateCounter(el, raw, suffix);
+          statObserver.unobserve(el);
+        });
+      },
+      { threshold: 0.5 }
+    );
+    // Tag the stat number elements
+    document.querySelectorAll('.about-stat-num').forEach((el) => {
+      const text = el.textContent.trim();
+      if (text === '30+') { el.dataset.target = '30'; el.dataset.suffix = '+'; }
+      else if (text === '10K+') { el.dataset.target = '10000'; el.dataset.suffix = ''; el.textContent = '0'; }
+      else if (text === '5.0★') { return; }
+      else if (text === 'ASE') { return; }
+      if (el.dataset.target) statObserver.observe(el);
+    });
+
+    /* ── Hero parallax ──────────────────────────────────── */
+    const heroBg = document.querySelector('.hero-bg');
+    if (heroBg && window.innerWidth > 768) {
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const heroH = document.querySelector('.hero').offsetHeight;
+        if (scrollY < heroH) {
+          heroBg.style.transform = `translateY(${scrollY * 0.35}px) scale(1.08)`;
+        }
+      }, { passive: true });
+      // Initial scale so there's no gap at the bottom when parallax moves the image up
+      heroBg.style.transform = 'translateY(0) scale(1.08)';
+    }
+
+    /* ── FAQ accordion ──────────────────────────────────── */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          if (openItem !== item) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            openItem.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        // Toggle this item
+        item.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        item.querySelector('.faq-answer').setAttribute('aria-hidden', String(isOpen));
+      });
+    });
+
+    /* ── Contact form basic feedback ─────────────────────── */
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      const original = btn.innerHTML;
+      btn.innerHTML = `
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Message Sent!
+      `;
+      btn.style.background = '#1B6835';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>
